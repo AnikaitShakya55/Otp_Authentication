@@ -8,6 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use("/home", (req, res) => {
+  res.send("Welcome to Home!");
+});
 app.use("/auth", require("./routes/routes"));
 
 databaseConnection().then(() => {
